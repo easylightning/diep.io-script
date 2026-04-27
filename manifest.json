@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Diep.io Assistant",
+  "description": "A modular browser assistant shell for diep.io with popup controls, persistent settings, and page activation hooks.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://diep.io/*",
+    "https://*.diep.io/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Diep.io Assistant",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://diep.io/*",
+        "https://*.diep.io/*"
+      ],
+      "js": [
+        "src/shared/config.js",
+        "src/content/content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://diep.io/*",
+        "https://*.diep.io/*"
+      ],
+      "js": [
+        "src/injected/diep-mod-menu.user.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
