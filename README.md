@@ -21,17 +21,28 @@ Diep.io icin Chrome/Chromium tabanli eklenti altyapisi. Mod menu oyun sayfasinda
 ## Menu Bolumleri
 
 - `Visual`: Aim line, factory circle, FPS, collision ve oyun UI gorunum ayarlari.
+- `Tools`: Nickname kaydet/doldur, rapid feed/eject, quad split, freeze mouse ve FPS overlay araclari.
+- `Radar`: Diep.io minimap uzerine yerel grid, koordinat scanner, renkli oyuncu noktalari, radar pulse ve manuel grid ayari.
+- `Design`: Lokal kozmetik projectile efektleri; roket, shell, laser, plasma ve neon stilleri.
 - `Auto Upgrade`: Custom build girisi, preset build secimi ve respawn sonrasi build koruma.
 - `Credits`: Discord ve Github bilgileri.
 
 ## Kisa Yol
 
 - `Insert`: Menuyu ac/kapat.
+- `E`: Basili tutunca rapid feed/eject.
+- `T`: Quad split.
+- `S`: Freeze mouse ac/kapat.
+- `F`: FPS overlay ac/kapat.
+- `Ctrl + \``: Kayitli nickname'i doldur.
+- `Ctrl + Shift + \``: Yeni nickname kaydet ve doldur.
 
 ## Notlar
 
 - Eklenti `https://diep.io/*` adreslerinde otomatik calisir.
 - Mod menu, oyunun sayfa icindeki global komut API'sine erismesi gerektigi icin Manifest V3 `MAIN` world ile yuklenir.
+- Radar modulu tamamen yerel calisir; bot, harici reklam linki, Discord webhook veya MQTT broker baglantisi icermez.
+- Design modu gercek oyun mermisini degistirmez; sadece kullanicinin ekraninda hafif canvas efekti cizer.
 - Degisikliklerden sonra `chrome://extensions` sayfasindan eklentiyi reload etmen gerekir.
 
 ## Sorun Giderme
